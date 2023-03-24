@@ -8,11 +8,11 @@ function toggleMenu(menuId) {
   }
 }
 
-// функция, которая закрывает меню
-function closeMenu() {
-  var menu = document.getElementsByClassName("menu");
-  for (var i = 0; i < menu.length; i++) {
-    menu[i].style.display = "none";
+// функция, которая закрывает все меню
+function closeAllMenus() {
+  var menus = document.getElementsByClassName("menu");
+  for (var i = 0; i < menus.length; i++) {
+    menus[i].style.display = "none";
   }
 }
 
@@ -25,28 +25,7 @@ for (var i = 0; i < buttons.length; i++) {
   });
 }
 
-// добавляем обработчик события на крестик
-var closeIcon = document.getElementById("close-icon");
-if (closeIcon) {
-  closeIcon.addEventListener("click", function () {
-    closeMenu();
-  });
-}
-
-// добавляем обработчик события на клик вне меню
-window.addEventListener("click", function (event) {
-  var menu = document.getElementsByClassName("menu");
-  var target = event.target;
-  var clickedInsideMenu = false;
-
-  for (var i = 0; i < menu.length; i++) {
-    if (target == menu[i] || menu[i].contains(target)) {
-      clickedInsideMenu = true;
-      break;
-    }
-  }
-
-  if (!clickedInsideMenu) {
-    closeMenu();
-  }
-});
+// добавляем обработчик события на крестики
+var closeIcons = document.getElementsByClassName("close-icon");
+for (var i = 0; i < closeIcons.length; i++) {
+  closeIcons[i
