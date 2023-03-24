@@ -2,20 +2,84 @@
 <html>
   <head>
     <meta charset="UTF-8">
-    <title>Мой простой сайт</title>
+    <title>Мой сайт с меню</title>
     <style>
-      /* Стиль для центрирования текста */
-      .center {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        height: 100vh;
+      /* Стили для кнопок */
+      .button {
+        display: inline-block;
+        padding: 10px 20px;
+        margin: 10px;
+        background-color: #f44336;
+        color: white;
+        font-size: 20px;
+        border: none;
+        cursor: pointer;
+        border-radius: 5px;
+      }
+
+      /* Стили для меню */
+      .menu {
+        display: none;
+        position: absolute;
+        top: 50px;
+        left: 0;
+        width: 100%;
+        background-color: #f1f1f1;
+        padding: 20px;
+        box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+        z-index: 1;
+      }
+
+      /* Стили для закрывающей иконки */
+      .close {
+        position: absolute;
+        top: 10px;
+        right: 10px;
+        font-size: 30px;
+        font-weight: bold;
+        color: #f44336;
+        cursor: pointer;
       }
     </style>
   </head>
   <body>
-    <div class="center">
-      <h1>Этот сайт blazixx, завидуйте лохи</h1>
+    <!-- Кнопки -->
+    <div>
+      <button class="button" onclick="showMenu('menu1')">Меню 1</button>
+      <button class="button" onclick="showMenu('menu2')">Меню 2</button>
+      <button class="button" onclick="showMenu('menu3')">Меню 3</button>
     </div>
-  </body>
-</html>
+
+    <!-- Меню 1 -->
+    <div id="menu1" class="menu">
+      <span class="close" onclick="hideMenu('menu1')">&times;</span>
+      <h2>Меню 1</h2>
+      <p>Это меню 1. Оно может содержать какой-то текст или другой контент.</p>
+    </div>
+
+    <!-- Меню 2 -->
+    <div id="menu2" class="menu">
+      <span class="close" onclick="hideMenu('menu2')">&times;</span>
+      <h2>Меню 2</h2>
+      <p>Это меню 2. Оно может содержать какой-то текст или другой контент.</p>
+    </div>
+
+    <!-- Меню 3 -->
+    <div id="menu3" class="menu">
+      <span class="close" onclick="hideMenu('menu3')">&times;</span>
+      <h2>Меню 3</h2>
+      <p>Это меню 3. Оно может содержать какой-то текст или другой контент.</p>
+    </div>
+
+    <!-- Скрипт для открытия/закрытия меню -->
+    <script>
+      function showMenu(menuId) {
+        document.getElementById(menuId).style.display = "block";
+      }
+
+      function hideMenu(menuId) {
+        document.getElementById(menuId).style.display = "none";
+      }
+    </script>
+    </body>
+ 
