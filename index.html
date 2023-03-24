@@ -34,7 +34,7 @@
       .close {
         position: absolute;
         top: 10px;
-        right: 10px;
+        right: 20px;
         font-size: 30px;
         font-weight: bold;
         color: #f44336;
@@ -43,43 +43,51 @@
     </style>
   </head>
   <body>
-    <!-- Кнопки -->
-    <div>
-      <button class="button" onclick="showMenu('menu1')">Меню 1</button>
-      <button class="button" onclick="showMenu('menu2')">Меню 2</button>
-      <button class="button" onclick="showMenu('menu3')">Меню 3</button>
-    </div>
+    <button class="button" onclick="toggleMenu('menu1')">Кнопка 1</button>
+    <button class="button" onclick="toggleMenu('menu2')">Кнопка 2</button>
+    <button class="button" onclick="toggleMenu('menu3')">Кнопка 3</button>
 
-    <!-- Меню 1 -->
     <div id="menu1" class="menu">
-      <span class="close" onclick="hideMenu('menu1')">&times;</span>
+      <span class="close" onclick="toggleMenu('menu1')">&times;</span>
       <h2>Меню 1</h2>
-      <p>Это меню 1. Оно может содержать какой-то текст или другой контент.</p>
+      <p>Это меню 1. Здесь может быть ваш контент.</p>
     </div>
 
-    <!-- Меню 2 -->
     <div id="menu2" class="menu">
-      <span class="close" onclick="hideMenu('menu2')">&times;</span>
+      <span class="close" onclick="toggleMenu('menu2')">&times;</span>
       <h2>Меню 2</h2>
-      <p>Это меню 2. Оно может содержать какой-то текст или другой контент.</p>
+      <p>Это меню 2. Здесь может быть ваш контент.</p>
     </div>
 
-    <!-- Меню 3 -->
     <div id="menu3" class="menu">
-      <span class="close" onclick="hideMenu('menu3')">&times;</span>
+      <span class="close" onclick="toggleMenu('menu3')">&times;</span>
       <h2>Меню 3</h2>
-      <p>Это меню 3. Оно может содержать какой-то текст или другой контент.</p>
+      <p>Это меню 3. Здесь может быть ваш контент.</p>
     </div>
+  <script>
+function toggleMenu(menuId) {
+  var menu = document.getElementById(menuId);
 
-    <!-- Скрипт для открытия/закрытия меню -->
-    <script>
-      function showMenu(menuId) {
-        document.getElementById(menuId).style.display = "block";
-      }
+  // проверяем, открыто ли уже меню
+  if (menu.style.display === "block") {
+    menu.style.display = "none"; // скрываем меню, если открыто
+  } else {
+    // скрываем все другие меню
+    var menus = document.getElementsByClassName("menu");
+    for (var i = 0; i < menus.length; i++) {
+      menus[i].style.display = "none";
+    }
+    
+    // отображаем выбранное меню
+    menu.style.display = "block";
+  }
+}
 
-      function hideMenu(menuId) {
-        document.getElementById(menuId).style.display = "none";
-      }
-    </script>
-    </body>
- 
+// обработчик события для элемента закрытия меню
+document.querySelectorAll(".close").forEach(function(el) {
+  el.addEventListener("click", function() {
+    var menu = this.parentNode;
+    menu.style.display = "none";
+  });
+});
+</script>
