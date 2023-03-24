@@ -91,3 +91,9 @@ document.querySelectorAll(".close").forEach(function(el) {
   });
 });
 </script>
+function closeMenu() {
+  var menu = document.querySelector(".menu");
+  menu.style.display = "none";
+}
+var close = document.querySelector(".close");
+close.addEventListener("click", closeMenu);
