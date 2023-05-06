@@ -1944,8 +1944,6 @@ function writeText(el){
 
 var $ = jQuery;
 
-$(window).resize(initialize);
-
 $(document).ready(function(){
     initialize();
 })
