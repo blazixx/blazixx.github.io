@@ -1964,8 +1964,6 @@ function initialize() {
         scrollwheel: false,
         center: myLatlng
     };
-
-    var map = new google.maps.Map(document.getElementsByClassName('map-canvas')[0],mapOptions);
 }
 
 var $ = jQuery;
