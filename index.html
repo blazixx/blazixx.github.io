@@ -49,6 +49,77 @@
 
 				</nav>
 
+								<div class="modal" id="notify" data-nav-color="#9f0">
+					
+					<h1 class="block" data-type="title-modal">
+						Notify me
+					</h1>
+					
+					<p class="block" data-type="text">
+						Lorem Ipsum is simply dummy text of the printing and typesetting industry.
+					</p>
+					
+					<form class="block notify-me" data-type="form" method="post" action="php/notify-me.php">
+						<div data-type="input" class="no-enter">
+							<input type="text" class="input-log" name="subscribe">
+							<div class="cmd">
+								<span></span>
+								<div class="cursor"></div>
+								<div class="enter-sumbol">
+									<button type="submit"><img src="img/arrow.svg" alt=""></button>
+								</div>
+							</div>
+						</div>
+						<div data-type="hide" data-row="messages">
+						</div>
+					</form>
+
+				</div>
+
+				<div class="modal" id="sayhello" data-map="true" data-nav-color="#ff0">
+					<h1 class="block" data-type="title-modal">
+						Say hello
+					</h1>
+					<form role="form" data-type="form" method="post" class="sayhello-form block">
+						<div class="form-input">
+							<input type="text" name="name" placeholder="Name:">
+							<div class="cmd">
+								<span></span>
+								<div class="cursor"></div>
+							</div>
+						</div>
+						<div class="form-input">
+							<input type="email" name="email" placeholder="Mail:">
+							<div class="cmd">
+								<span></span>
+								<div class="cursor"></div>
+							</div>
+						</div>
+						<div class="form-input">
+							<input type="text" name="comment" placeholder="Text:">
+							<div class="cmd">
+								<span></span>
+								<div class="cursor"></div>
+							</div>
+						</div>
+						<div class="form-button">
+							<button type="submit" data-color="#ff0">send</button>
+						</div>
+					</form>
+				</div>
+
+				<section class="page" data-nav="home" data-nav-color="#9f0" id="home">
+
+					<div class="block countdown" data-type="timer" data-time="30 march 2016 23:59">
+						<div class="innertime"></div>
+					</div>
+
+					<nav class="block" id="home-nav" data-type="nav">
+						<a href="#notify" data-nav-color="#0f0" class="link">notify me</a>
+					</nav>
+					
+				</section>
+							
 				<section class="page" data-nav="about" data-nav-color="#f63" id="about">
 					<h1 class="block" data-type="title">
 						About
